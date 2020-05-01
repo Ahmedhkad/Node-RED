@@ -1,0 +1,20 @@
+//reformating data from sql to UI_chart in dashboaard of Node-RED
+var i;
+var x = [];
+var y = [];
+var pl_old = msg.payload;
+var pl_new = [];
+
+for (i = 0; i<pl_old.length; i++) {
+    // get data info x and y, and convert to unix time format:
+    x[i] = new Date(pl_old[i].timestamp).getTime();
+    y[i] = pl_old[i].data;
+    
+    // generate key-value pair:
+    pl_new[i] = {"x":x[i], "y":y[i]};
+}
+
+// Redefine msg.payload and return:
+msg.payload = [{"series":["temp"], "labels":["cpu temp data"], "data":[pl_new]}];
+
+return msg;
