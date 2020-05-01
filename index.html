@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/dietpi.png" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>DietPi Dashboard</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-dark bg-dark ">
+            <a class="navbar-brand" href="#">
+              <img src="/dietpi.png" class="rounded-circle" width="40" height="40" style="border-radius: 12%!important;" class="d-inline-block align-top" alt="">
+        Diet Pi Dashboard</a>
+        <a style="color: #e9ecef;font-size: 1.2vw;">Debian 9 (stretch)<br> on OrangePi Zero</a>
+        <a style="color: #e9ecef;font-size: 1.2vw;">DietPi 4.19.62-sunxi #5.92 <br> Cortex-A7 Allwinner sun8i Family</a>
+
+
+        </nav>
+    </div>
+
+    <div class="container btn-group d-flex" style="padding-top: 3px">
+      <a href="http://192.168.0.148/phpsysinfo" type="button" class="col btn btn-primary">phpSysInfo</a>
+      <a href="http://192.168.0.148/phpinfo.php" type="button" class="col btn btn-info">PHPinfo</a>
+      <a href="http://192.168.0.148/apc.php" type="button" class="col btn btn-success">APC/u</a>
+      <a href="http://192.168.0.148:1880" type="button" class="col btn btn-danger">Node-RED</a>
+      <a href="http://192.168.0.148:1880/ui" type="button" class="col btn btn-primary">node-UI</a>
+      <a href="http://192.168.0.148/opcache.php" type="button" class="col btn btn-secondary">Opcache</a>
+      <a href="http://192.168.0.148/main.html" type="button" class="col btn btn-default">Apache</a>
+      <a href="http://192.168.0.148/phpmyadmin" type="button" class="col btn btn-warning">phpMyAdmin</a>
+    </div>
+
+    <div class="container " style="padding-top: 8px">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Passwords</a>
+          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Ports</a>
+          <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Versions</a>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Service</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Password</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>phpMyAdmin</td>
+                            <td>phpmyadmin</td>
+                            <td>dietpi</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>MySQL</td>
+                            <td>root <br>user </td>
+                            <td>dietpi<br>11241124</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>ProFTP </td>
+                            <td>(dietpi) ftp://dietpi:dietpi@192.168.0.148</td>
+                            <td>dietpi</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>SSH Server</td>
+                            <td>root</td>
+                            <td>dietpi</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>Mosquitto</td>
+                            <td>ahkad</td>
+                            <td>11241124</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      </div>
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Service</th>
+                            <th scope="col">port</th>
+                            <th scope="col">Settings path</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Node-RED</td>
+                            <td>1880</td>
+                            <td>/root/.node-red/settings.js</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Mosquitto </td>
+                            <td>1883</td>
+                            <td>/etc/mosquitto/conf.d/default.conf</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>MySQL</td>
+                            <td>3306</td>
+                            <td>command-> mysql</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>FTP pro</td>
+                            <td>21</td>
+                            <td>/etc/proftpd/proftpd.conf</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>Apache2</td>
+                            <td>80</td>
+                            <td>/etc/apache2/apache2.conf</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Service</th>
+                            <th scope="col">Version</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>phpMyAdmin</td>
+                            <td>5.0.2</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>PHP</td>
+                            <td>7.3.17-1+0~20200419.57+debian9~1.gbp0fda17</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>MariaDB</td>
+                            <td>10.1.44-MariaDB-0+deb9u1 - Debian 9.11</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>Node-RED</td>
+                            <td>1.0.6</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>Mosquitto</td>
+                            <td>1.4.10-3+deb9u4</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+        </div>
+    </div> <!-- <div class="container"> -->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
