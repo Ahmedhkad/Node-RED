@@ -1,0 +1,17 @@
+//Write to Database (mysql on PHPmyAdmin)
+var inmsg = msg.payload;
+//var now = new Date().getTime();
+//msg.topic = "INSERT INTO sensor_data ( `temperature`, `humidity`) VALUES ( "+ inmsg+", "+ humidity +");"
+//msg.topic = "INSERT INTO cpu ( `timestamp`, `data`) VALUES ( "+inmsg+", "+now+");"
+msg.topic = "INSERT INTO cpu (`data`) VALUES ( "+inmsg+");"
+return msg;
+
+
+
+//Read from mysql
+msg.topic = "SELECT * FROM cpu WHERE cpu.timestamp > DATE_SUB(CURDATE(), INTERVAL 6 HOUR);"
+//The INTERVAL can be in YEAR, MONTH, DAY, HOUR, MINUTE, SECOND
+//SELECT  *
+//FROM    mytable
+//WHERE   record_date >= NOW() - INTERVAL 1 DAY  //from 23:59 time or 00:00
+return msg;
